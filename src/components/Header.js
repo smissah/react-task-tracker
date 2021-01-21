@@ -2,13 +2,14 @@
 
 import Button from "./Button";
 
-const addTask = () => {
-  console.log("addTask");
-};
-const Header = () => (
+const Header = ({ handleShowForm, trueOrFalse }) => (
   <header className="header">
     <h1>Task Tracker</h1>
-    <Button color="#58D68D" text="+" btnFunc={addTask} />
+    <Button
+      color="#58D68D"
+      text={trueOrFalse == true ? "-" : "+"}
+      handleShowForm={handleShowForm}
+    />
   </header>
 );
 

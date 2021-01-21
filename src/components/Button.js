@@ -1,9 +1,9 @@
 import PropTypes from "prop-types"; //used to set default data types for stuff
 
-const Button = ({ color, text, weight, btnFunc }) => {
+const Button = ({ color, text, weight, handleShowForm }) => {
   return (
     <button
-      onClick={btnFunc}
+      onClick={handleShowForm}
       style={{ background: color, weight: weight }}
       className="btn"
     >

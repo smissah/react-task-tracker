@@ -1,10 +1,20 @@
+import React from "react";
 import Task from "./Task";
 
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, handleDeleteTask, handleReminder }) => {
   return (
     <div>
-      {tasks.map(({ task }) => (
-        <Task task={task} key={task.id} />
+      <p>Double-click a task to add reminder!</p> <hr />
+      {tasks.map(({ id, text, reminder, day }) => (
+        <Task
+          key={id}
+          taskId={id}
+          text={text}
+          reminder={reminder}
+          day={day}
+          handleDeleteTask={handleDeleteTask}
+          handleReminder={handleReminder}
+        />
       ))}
     </div>
   );
