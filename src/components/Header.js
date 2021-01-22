@@ -7,7 +7,7 @@ const Header = ({ handleShowForm, trueOrFalse }) => (
     <h1>Task Tracker</h1>
     <Button
       color="#58D68D"
-      text={trueOrFalse == true ? "-" : "+"}
+      text={trueOrFalse === true ? "-" : "+"}
       handleShowForm={handleShowForm}
     />
   </header>
