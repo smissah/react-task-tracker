@@ -31,6 +31,15 @@ const App = () => {
     return data;
   };
 
+  const fetchSingleTask = async (id) => {
+    const url = `http://localhost:5000/tasks/${id}`;
+    //fetch returns a promise so await it
+    const reponse = await fetch(url);
+    const data = await reponse.json();
+    console.log("data from j.son", data);
+    return data;
+  };
+
   //!removeTask
   const handleDeleteTask = async (taskId) => {
     //no need for variable as no data to be returned
@@ -48,12 +57,27 @@ const App = () => {
 
   //!handleReminder
 
-  const handleReminder = (taskId) => {
+  const handleReminder = async (taskId) => {
+    const taskToToggle = await fetchSingleTask(taskId);
+
+    const updatedTask = await {
+      ...taskToToggle,
+      reminder: !taskToToggle.reminder,
+    };
+
+    const reponse = await fetch(`http://localhost:5000/tasks/${taskId}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedTask),
+    });
+
+    const data = await reponse.json();
+
     console.log(`Reminder: ${taskId}`);
     setTasks(
       tasks.map(
         (task) =>
-          task.id === taskId ? { ...task, reminder: !task.reminder } : task
+          task.id === taskId ? { ...task, reminder: data.reminder } : task
         //break down the task object but change the reminder - OTHERWISE JUST RETURN THE OBJECT OR IT'LL BREAK
       )
     );
