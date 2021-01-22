@@ -20,9 +20,10 @@ const AddTask = ({ handleShowForm, handleAddTask }) => {
       alert("Please enter a text");
       return;
     }
-    if (!date || date < today) {
+    if (!date || date.parseInt() < today) {
       alert("Hmm, that date doesn't look right");
-      return;
+      console.log(`" ${date} "`);
+      return `"${date}"`;
     }
 
     handleAddTask({ text, date, time, reminder });
@@ -51,14 +52,15 @@ const AddTask = ({ handleShowForm, handleAddTask }) => {
           type="date"
           placeholder="When is it due?"
           onChange={(e) => {
-            setDate(e.target.value);
+            setDate(`${e.target.value}`);
+            console.log(e.target.value);
           }}
         />
         <input
           type="time"
           placeholder="When is it due?"
           onChange={(e) => {
-            setTime(e.target.value);
+            setTime(e.target.value.toString());
           }}
         />
       </div>

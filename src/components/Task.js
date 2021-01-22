@@ -10,7 +10,7 @@ const Task = ({
   handleReminder,
 }) => {
   return (
-    <div>
+    <div key={taskId}>
       <div
         className={` task ${reminder && "reminder"} `}
         onDoubleClick={() => {
