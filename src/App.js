@@ -2,11 +2,21 @@ import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 import Hooray from "./components/Hooray";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function App() {
+const App = () => {
   const [tasks, setTasks] = useState([]);
   const [addTaskForm, setAddTaskForm] = useState(true);
+
+  const url = "http://localhost:5000/tasks";
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+    };
+    fetchTasks();
+  }, []);
 
   //!removeTask
   const handleDeleteTask = (taskId) => {
@@ -69,6 +79,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;
