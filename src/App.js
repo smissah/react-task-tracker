@@ -1,29 +1,11 @@
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
+import Hooray from "./components/Hooray";
 import { useState } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: "Tidy Up",
-      day: "Fed 5th at 5:40",
-      reminder: false,
-    },
-    {
-      id: 2,
-      text: "Fishing",
-      day: "Feb 7th 4:00",
-      reminder: true,
-    },
-    {
-      id: 3,
-      text: "Walk Teddy",
-      day: "Feb 7th 6:00",
-      reminder: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
   const [addTaskForm, setAddTaskForm] = useState(true);
 
   //!removeTask
@@ -76,14 +58,14 @@ function App() {
           handleShowForm={handleShowForm}
         />
       )}
-      {tasks.length > 0 ? (
+      {tasks.length <= 0 && addTaskForm ? (
         <Tasks
           tasks={tasks}
           handleDeleteTask={handleDeleteTask}
           handleReminder={handleReminder}
         />
       ) : (
-        <h3 className="completed">Hooray, all tasks completed!</h3>
+        <Hooray />
       )}
     </div>
   );
