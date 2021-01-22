@@ -18,18 +18,15 @@ const AddTask = ({ handleShowForm, handleAddTask }) => {
     today = mm + "/" + dd + "/" + yyyy;
     console.log(today);
     if (!text) {
-      alert("Please enter a text");
       return;
     }
 
     if (!day) {
-      alert("Hmm, that date doesn't look right");
       console.log(day);
       return;
     }
 
     handleAddTask({ text, day, time, reminder });
-    alert("tset2");
 
     setText("");
     setDay("");

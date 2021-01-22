@@ -36,7 +36,7 @@ const App = () => {
     //fetch returns a promise so await it
     const reponse = await fetch(url);
     const data = await reponse.json();
-    console.log("data from j.son", data);
+
     return data;
   };
 
@@ -94,7 +94,7 @@ const App = () => {
   //!add new task
 
   const handleAddTask = async (task) => {
-    console.log(task);
+    // console.log(task);
     const response = await fetch(`http://localhost:5000/tasks`, {
       method: "POST",
       headers: {
