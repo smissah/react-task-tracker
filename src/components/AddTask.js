@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const AddTask = ({ handleShowForm, handleAddTask }) => {
   const [text, setText] = useState("");
-  const [date, setDate] = useState("");
+  const [day, setDay] = useState("");
   const [time, setTime] = useState("");
   const [reminder, setReminder] = useState(false);
 
@@ -16,20 +16,23 @@ const AddTask = ({ handleShowForm, handleAddTask }) => {
     const yyyy = today.getFullYear();
 
     today = mm + "/" + dd + "/" + yyyy;
+    console.log(today);
     if (!text) {
       alert("Please enter a text");
       return;
     }
-    if (!date || date.parseInt() < today) {
+
+    if (!day) {
       alert("Hmm, that date doesn't look right");
-      console.log(`" ${date} "`);
-      return `"${date}"`;
+      console.log(day);
+      return;
     }
 
-    handleAddTask({ text, date, time, reminder });
+    handleAddTask({ text, day, time, reminder });
+    alert("tset2");
 
     setText("");
-    setDate("");
+    setDay("");
     setTime("");
     setReminder(false);
   };
@@ -52,8 +55,8 @@ const AddTask = ({ handleShowForm, handleAddTask }) => {
           type="date"
           placeholder="When is it due?"
           onChange={(e) => {
-            setDate(`${e.target.value}`);
-            console.log(e.target.value);
+            setDay(e.target.value.toString());
+            // console.log(e.target.value.toString());
           }}
         />
         <input

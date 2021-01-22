@@ -1,38 +1,25 @@
 {
   "tasks": [
     {
-      "text": "sdfdsf",
-      "date": "2021-01-23",
-      "time": "18:32",
-      "reminder": false,
-      "id": 1
+      "id": 1,
+      "text": "Doctors Appointment",
+      "day": "26/1/2021",
+      "time": "17:30",
+      "reminder": true
     },
     {
-      "text": "sdfdsfdsf",
-      "date": "2021-01-26",
-      "time": "13:35",
-      "reminder": false,
-      "id": 2
+      "id": 2,
+      "text": "Doctors Appointment",
+      "day": "26/1/2021",
+      "time": "17:30",
+      "reminder": true
     },
     {
-      "text": "dsfdsf",
-      "date": "2021-01-31",
-      "reminder": false,
-      "id": 3
-    },
-    {
-      "text": "dfdfd",
-      "date": " 2021-01-30 ",
-      "time": "",
-      "reminder": false,
-      "id": 4
-    },
-    {
-      "text": "dsds",
-      "date": " sdf ",
-      "time": "",
-      "reminder": false,
-      "id": 5
+      "id": 3,
+      "text": "Doctors Appointment",
+      "day": "26/1/2021",
+      "time": "17:30",
+      "reminder": true
     }
   ]
 }

@@ -5,13 +5,15 @@ const Tasks = ({ tasks, handleDeleteTask, handleReminder }) => {
   return (
     <div>
       <p>Double-click a task to add reminder!</p> <hr />
-      {tasks.map(({ id, text, reminder, day }) => (
+      {tasks.map((task, index) => (
         <Task
-          key={id}
-          taskId={id}
-          text={text}
-          reminder={reminder}
-          day={day}
+          key={index}
+          // taskId={id}
+          // text={text}
+          // time={time}
+          // reminder={reminder}
+          // day={day}
+          task={task}
           handleDeleteTask={handleDeleteTask}
           handleReminder={handleReminder}
         />

@@ -63,13 +63,14 @@ const App = () => {
   const handleShowForm = () => {
     // console.log(addTaskForm);
     setAddTaskForm(!addTaskForm);
-    console.log(addTaskForm);
+    // console.log(addTaskForm);
     return addTaskForm;
   };
 
   //!add new task
 
   const handleAddTask = async (task) => {
+    console.log(task);
     const response = await fetch(`http://localhost:5000/tasks`, {
       method: "POST",
       headers: {
@@ -78,7 +79,9 @@ const App = () => {
       body: JSON.stringify(task),
     });
     const data = await response.json();
+    console.log("data is:", data);
     setTasks([...tasks, data]);
+    console.log(tasks);
 
     // no need for this as server/dbase makes id
     //   const id = Math.floor(Math.random() * 100) + 1;
