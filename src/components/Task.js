@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTimes } from "react-icons/fa";
+// import { FaTimes } from "react-icons/fa";
 
 const Task = ({
   text,
@@ -20,12 +20,15 @@ const Task = ({
       >
         <h3>
           {text}
-          <FaTimes
+          <p
             style={{ color: "#EC7063", cursor: "pointer" }}
             onClick={() => {
               handleDeleteTask(taskId);
             }}
-          />
+          >
+            delete
+          </p>
+          {/* <FaTimes /> */}
         </h3>
         <p>{day}</p>
       </div>
