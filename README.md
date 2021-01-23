@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+https://gracious-minsky-7cde1a.netlify.app/   << BUILD - server runs locally on my pc on port 5000 so for full fucntionality, you must set up your own
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
