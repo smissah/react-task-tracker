@@ -11,7 +11,7 @@
       "text": "Walk BarkBark",
       "day": "2021-01-23",
       "time": "15:30",
-      "reminder": false,
+      "reminder": true,
       "id": 4
     },
     {
